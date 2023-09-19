@@ -15,15 +15,15 @@ Build-Depends: cmake,
                libgz-plugin2-dev,
                libgz-utils2-dev,
                libgz-utils2-cli-dev,
-# DART from Ubuntu repositories, 6.12.1 + OSRF patches
-               libdart-dev (>= 6.12.1+dfsg4),
-               libdart-collision-bullet-dev (>= 6.12.1+dfsg4),
-               libdart-collision-ode-dev (>= 6.12.1+dfsg4),
-               libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4),
-               libdart-external-ikfast-dev (>= 6.12.1+dfsg4),
-               libdart-external-odelcpsolver-dev (>= 6.12.1+dfsg4),
-               libdart-utils-dev (>= 6.12.1+dfsg4),
-               libdart-utils-urdf-dev (>= 6.12.1+dfsg4),
+# DART from packages.o.o repositories
+               libdart-dev (>= 6.13.0),
+               libdart-collision-bullet-dev (>= 6.13.0),
+               libdart-collision-ode-dev (>= 6.13.0),
+               libdart-external-convhull-3d-dev (>= 6.13.0),
+               libdart-external-ikfast-dev (>= 6.13.0),
+               libdart-external-odelcpsolver-dev (>= 6.13.0),
+               libdart-utils-dev (>= 6.13.0),
+               libdart-utils-urdf-dev (>= 6.13.0),
                libsdformat14-dev
 Vcs-Browser: https://github.com/gazebosim/gz-physics
 Vcs-Git: https://github.com/gazebo-release/gz-physics7-release
@@ -119,6 +119,8 @@ Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-math7-eigen3-dev,
          libgz-common5-dev,
          libgz-plugin2-dev,
+# DART from Ubuntu repositories. Not really compatible since we are building
+# with DART 6.13, CMake will deal with this incompatibility.
          libdart-dev (>= 6.12.1+dfsg4),
          libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4),
          libdart-collision-ode-dev (>= 6.12.1+dfsg4),
