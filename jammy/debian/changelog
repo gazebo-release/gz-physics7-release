@@ -1,3 +1,9 @@
+gz-physics7 (7.0.0~pre2-102~jammy) jammy; urgency=medium
+
+  * gz-physics7 7.0.0~pre2-102 release
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Wed, 20 Sep 2023 15:16:13 +0200
+
 gz-physics7 (7.0.0~pre2-101~jammy) jammy; urgency=medium
 
   * gz-physics7 7.0.0~pre2-101 release
