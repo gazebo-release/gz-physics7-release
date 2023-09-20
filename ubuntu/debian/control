@@ -16,14 +16,14 @@ Build-Depends: cmake,
                libgz-utils2-dev,
                libgz-utils2-cli-dev,
 # DART from packages.o.o repositories
-               libdart-dev (>= 6.13.0),
-               libdart-collision-bullet-dev (>= 6.13.0),
-               libdart-collision-ode-dev (>= 6.13.0),
-               libdart-external-convhull-3d-dev (>= 6.13.0),
-               libdart-external-ikfast-dev (>= 6.13.0),
-               libdart-external-odelcpsolver-dev (>= 6.13.0),
-               libdart-utils-dev (>= 6.13.0),
-               libdart-utils-urdf-dev (>= 6.13.0),
+               libdart6.13-dev,
+               libdart6.13-collision-bullet-dev,
+               libdart6.13-collision-ode-dev,
+               libdart6.13-external-convhull-3d-dev,
+               libdart6.13-external-ikfast-dev,
+               libdart6.13-external-odelcpsolver-dev,
+               libdart6.13-utils-dev,
+               libdart6.13-utils-urdf-dev,
                libsdformat14-dev
 Vcs-Browser: https://github.com/gazebosim/gz-physics
 Vcs-Git: https://github.com/gazebo-release/gz-physics7-release
@@ -119,16 +119,18 @@ Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-math7-eigen3-dev,
          libgz-common5-dev,
          libgz-plugin2-dev,
-# DART from Ubuntu repositories. Not really compatible since we are building
-# with DART 6.13, CMake will deal with this incompatibility.
-         libdart-dev (>= 6.12.1+dfsg4),
-         libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4),
-         libdart-collision-ode-dev (>= 6.12.1+dfsg4),
-         libdart-utils-urdf-dev (>= 6.12.1+dfsg4),
-         libdart-utils-dev (>= 6.12.1+dfsg4),
-         libdart-external-odelcpsolver-dev (>= 6.12.1+dfsg4),
-         libdart-external-ikfast-dev (>= 6.12.1+dfsg4),
-         libdart-collision-bullet-dev (>= 6.12.1+dfsg4),
+# DART 6.12 from Ubuntu repositories first and 6.13 (good one) after. Not
+# really compatible since we are building with DART 6.13, CMake will deal with
+# this incompatibility. See
+# https://github.com/gazebosim/gz-physics/issues/541#issuecomment-1718382026
+         libdart-dev (>= 6.12.1+dfsg4) | libdart6.13-dev,
+         libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4) | libdart6.13-external-convhull-3d-dev,
+         libdart-collision-ode-dev (>= 6.12.1+dfsg4) | libdart6.13-collision-ode-dev,
+         libdart-utils-urdf-dev (>= 6.12.1+dfsg4) | libdart6.13-utils-urdf-dev,
+         libdart-utils-dev (>= 6.12.1+dfsg4) | libdart6.13-utils-dev,
+         libdart-external-odelcpsolver-dev (>= 6.12.1+dfsg4) | libdart6.13-external-odelcpsolver-dev,
+         libdart-external-ikfast-dev (>= 6.12.1+dfsg4) | libdart6.13-external-ikfast-dev,
+         libdart-collision-bullet-dev (>= 6.12.1+dfsg4) | libdart6.13-collision-bullet-dev,
          libsdformat14-dev,
          libgz-physics7-dartsim (= ${binary:Version}),
          ${misc:Depends}
@@ -264,115 +266,3 @@ Description: Gazebo Physics classes and functions for robot apps - Metapackage
   designed to rapidly develop robot applications.
   .
   Metapackage, all development files
-
-Package: libignition-physics7-core-dev
-Depends: libgz-physics7-core-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-sdf-dev
-Depends: libgz-physics7-sdf-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-mesh-dev
-Depends: libgz-physics7-mesh-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-heightmap-dev
-Depends: libgz-physics7-heightmap-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7
-Depends: libgz-physics7, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-dartsim-dev
-Depends: libgz-physics7-dartsim-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-dartsim
-Depends: libgz-physics7-dartsim, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-tpe-dev
-Depends: libgz-physics7-tpe-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-tpe
-Depends: libgz-physics7-tpe, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-tpelib-dev
-Depends: libgz-physics7-tpelib-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-tpelib
-Depends: libgz-physics7-tpelib, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-bullet-dev
-Depends: libgz-physics7-bullet-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-bullet
-Depends: libgz-physics7-bullet, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
-
-Package: libignition-physics7-dev
-Depends: libgz-physics7-dev, ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: oldlibs
-Description: transitional package
- This is a transitional package. It can safely be removed.
