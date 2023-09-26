@@ -119,9 +119,10 @@ Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-math7-eigen3-dev,
          libgz-common5-dev,
          libgz-plugin2-dev,
-# DART 6.12 from Ubuntu repositories first and 6.13 (good one) after. Not
-# really compatible since we are building with DART 6.13, CMake will deal with
-# this incompatibility. See
+# DART 6.12 from Ubuntu repositories first and 6.13 (right one) after. The mix of
+# versions is not really compatible but don't want to the -dev packages to conflict.
+# CMake will deal with the incompatibility checking version and not supporting the
+# DART 6.12/6.13 mix for developing on top of gz-physics-dartsim-plugin . See
 # https://github.com/gazebosim/gz-physics/issues/541#issuecomment-1718382026
          libdart-dev (>= 6.12.1+dfsg4) | libdart6.13-dev,
          libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4) | libdart6.13-external-convhull-3d-dev,
