@@ -105,40 +105,6 @@ Description: Gazebo Physics classes and functions for robot apps - Shared librar
   .
   Main shared library
 
-Package: libgz-physics7-dartsim-dev
-Architecture: any
-Section: libdevel
-Depends: libgz-physics7-core-dev (= ${binary:Version}),
-         libgz-physics7-sdf-dev (= ${binary:Version}),
-         libgz-physics7-mesh-dev (= ${binary:Version}),
-         libgz-physics7-heightmap-dev (= ${binary:Version}),
-         libgz-cmake3-dev,
-         libgz-common5-geospatial-dev,
-         libgz-common5-graphics-dev,
-         libgz-math7-dev,
-         libgz-math7-eigen3-dev,
-         libgz-common5-dev,
-         libgz-plugin2-dev,
-# DART from Ubuntu repositories. Not really compatible since we are building
-# with DART 6.13, CMake will deal with this incompatibility.
-         libdart-dev (>= 6.12.1+dfsg4),
-         libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4),
-         libdart-collision-ode-dev (>= 6.12.1+dfsg4),
-         libdart-utils-urdf-dev (>= 6.12.1+dfsg4),
-         libdart-utils-dev (>= 6.12.1+dfsg4),
-         libdart-external-odelcpsolver-dev (>= 6.12.1+dfsg4),
-         libdart-external-ikfast-dev (>= 6.12.1+dfsg4),
-         libdart-collision-bullet-dev (>= 6.12.1+dfsg4),
-         libsdformat14-dev,
-         libgz-physics7-dartsim (= ${binary:Version}),
-         ${misc:Depends}
-Multi-Arch: same
-Description: Gazebo Physics classes and functions for robot apps - Development files
-  Gazebo Physics is a component in the Gazebo framework, a set of libraries
-  designed to rapidly develop robot applications.
-  .
-  Dartsim component, development files
-
 Package: libgz-physics7-dartsim
 Architecture: any
 Section: libs
@@ -251,7 +217,6 @@ Architecture: any
 Section: libdevel
 Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-physics7-bullet-dev (= ${binary:Version}),
-         libgz-physics7-dartsim-dev (= ${binary:Version}),
          libgz-physics7-heightmap-dev (= ${binary:Version}),
          libgz-physics7-mesh-dev (= ${binary:Version}),
          libgz-physics7-sdf-dev (= ${binary:Version}),
