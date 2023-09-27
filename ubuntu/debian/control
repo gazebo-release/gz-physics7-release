@@ -105,43 +105,6 @@ Description: Gazebo Physics classes and functions for robot apps - Shared librar
   .
   Main shared library
 
-Package: libgz-physics7-dartsim-dev
-Architecture: any
-Section: libdevel
-Depends: libgz-physics7-core-dev (= ${binary:Version}),
-         libgz-physics7-sdf-dev (= ${binary:Version}),
-         libgz-physics7-mesh-dev (= ${binary:Version}),
-         libgz-physics7-heightmap-dev (= ${binary:Version}),
-         libgz-cmake3-dev,
-         libgz-common5-geospatial-dev,
-         libgz-common5-graphics-dev,
-         libgz-math7-dev,
-         libgz-math7-eigen3-dev,
-         libgz-common5-dev,
-         libgz-plugin2-dev,
-# DART 6.12 from Ubuntu repositories first and 6.13 (right one) after. The mix of
-# versions is not really compatible but don't want to the -dev packages to conflict.
-# CMake will deal with the incompatibility checking version and not supporting the
-# DART 6.12/6.13 mix for developing on top of gz-physics-dartsim-plugin . See
-# https://github.com/gazebosim/gz-physics/issues/541#issuecomment-1718382026
-         libdart-dev (>= 6.12.1+dfsg4) | libdart6.13-dev,
-         libdart-external-convhull-3d-dev (>= 6.12.1+dfsg4) | libdart6.13-external-convhull-3d-dev,
-         libdart-collision-ode-dev (>= 6.12.1+dfsg4) | libdart6.13-collision-ode-dev,
-         libdart-utils-urdf-dev (>= 6.12.1+dfsg4) | libdart6.13-utils-urdf-dev,
-         libdart-utils-dev (>= 6.12.1+dfsg4) | libdart6.13-utils-dev,
-         libdart-external-odelcpsolver-dev (>= 6.12.1+dfsg4) | libdart6.13-external-odelcpsolver-dev,
-         libdart-external-ikfast-dev (>= 6.12.1+dfsg4) | libdart6.13-external-ikfast-dev,
-         libdart-collision-bullet-dev (>= 6.12.1+dfsg4) | libdart6.13-collision-bullet-dev,
-         libsdformat14-dev,
-         libgz-physics7-dartsim (= ${binary:Version}),
-         ${misc:Depends}
-Multi-Arch: same
-Description: Gazebo Physics classes and functions for robot apps - Development files
-  Gazebo Physics is a component in the Gazebo framework, a set of libraries
-  designed to rapidly develop robot applications.
-  .
-  Dartsim component, development files
-
 Package: libgz-physics7-dartsim
 Architecture: any
 Section: libs
@@ -254,7 +217,6 @@ Architecture: any
 Section: libdevel
 Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-physics7-bullet-dev (= ${binary:Version}),
-         libgz-physics7-dartsim-dev (= ${binary:Version}),
          libgz-physics7-heightmap-dev (= ${binary:Version}),
          libgz-physics7-mesh-dev (= ${binary:Version}),
          libgz-physics7-sdf-dev (= ${binary:Version}),
