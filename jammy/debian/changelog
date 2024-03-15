@@ -1,3 +1,9 @@
+gz-physics7 (7.1.0-1~jammy) jammy; urgency=medium
+
+  * gz-physics7 7.1.0-1 release
+
+ -- Addisu Z. Taddese <addisu@openrobotics.org>  Fri, 15 Mar 2024 14:29:40 -0500
+
 gz-physics7 (7.0.0-1~jammy) jammy; urgency=medium
 
   * gz-physics7 7.0.0-1 release
