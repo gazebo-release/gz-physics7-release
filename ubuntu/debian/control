@@ -17,14 +17,14 @@ Build-Depends: cmake,
                libgz-utils2-dev,
                libgz-utils2-cli-dev,
 # DART from packages.o.o repositories
-               libdart6.13-dev,
-               libdart6.13-collision-bullet-dev,
-               libdart6.13-collision-ode-dev,
-               libdart6.13-external-convhull-3d-dev,
-               libdart6.13-external-ikfast-dev,
-               libdart6.13-external-odelcpsolver-dev,
-               libdart6.13-utils-dev,
-               libdart6.13-utils-urdf-dev,
+               libdart6.13-dev [!armhf],
+               libdart6.13-collision-bullet-dev [!armhf],
+               libdart6.13-collision-ode-dev [!armhf],
+               libdart6.13-external-convhull-3d-dev [!armhf],
+               libdart6.13-external-ikfast-dev [!armhf],
+               libdart6.13-external-odelcpsolver-dev [!armhf],
+               libdart6.13-utils-dev [!armhf],
+               libdart6.13-utils-urdf-dev [!armhf],
                libsdformat14-dev
 Vcs-Browser: https://github.com/gazebosim/gz-physics
 Vcs-Git: https://github.com/gazebo-release/gz-physics7-release
@@ -107,7 +107,7 @@ Description: Gazebo Physics classes and functions for robot apps - Shared librar
   Main shared library
 
 Package: libgz-physics7-dartsim-dev
-Architecture: any
+Architecture: amd64 arm64
 Section: libdevel
 Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-physics7-sdf-dev (= ${binary:Version}),
@@ -144,7 +144,7 @@ Description: Gazebo Physics classes and functions for robot apps - Development f
   Dartsim component, development files
 
 Package: libgz-physics7-dartsim
-Architecture: any
+Architecture: amd64 arm64
 Section: libs
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -251,7 +251,7 @@ Description: Gazebo Physics classes and functions for robot apps - Bullet engine
   Bullet component shared library
 
 Package: libgz-physics7-dev
-Architecture: any
+Architecture: amd64 arm64
 Section: libdevel
 Depends: libgz-physics7-core-dev (= ${binary:Version}),
          libgz-physics7-bullet-dev (= ${binary:Version}),
@@ -268,3 +268,23 @@ Description: Gazebo Physics classes and functions for robot apps - Metapackage
   designed to rapidly develop robot applications.
   .
   Metapackage, all development files
+
+Package: libgz-physics7-dev
+Architecture: armhf
+Section: libdevel
+Depends: libgz-physics7-core-dev (= ${binary:Version}),
+         libgz-physics7-bullet-dev (= ${binary:Version}),
+         libgz-physics7-heightmap-dev (= ${binary:Version}),
+         libgz-physics7-mesh-dev (= ${binary:Version}),
+         libgz-physics7-sdf-dev (= ${binary:Version}),
+         libgz-physics7-tpe-dev (= ${binary:Version}),
+         libgz-physics7-tpelib-dev (= ${binary:Version}),
+         ${misc:Depends}
+Multi-Arch: same
+Description: Gazebo Physics classes and functions for robot apps - Metapackage
+  Gazebo Physics is a component in the Gazebo framework, a set of libraries
+  designed to rapidly develop robot applications.
+  It does not have any DART packages as dependencies since DART does not
+  support 32 bits anymore.
+  .
+  Metapackage, all development files for armhf
