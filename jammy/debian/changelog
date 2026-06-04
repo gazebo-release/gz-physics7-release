@@ -1,3 +1,9 @@
+gz-physics7 (7.8.0-1~jammy) jammy; urgency=medium
+
+  * gz-physics7 7.8.0-1 release
+
+ -- Jose Luis Rivero <jrivero@honurobotics.com>  Thu, 04 Jun 2026 12:08:15 +0200
+
 gz-physics7 (7.7.0-1~jammy) jammy; urgency=medium
 
   * gz-physics7 7.7.0-1 release
