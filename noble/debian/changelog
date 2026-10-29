@@ -1,3 +1,9 @@
+gz-physics7 (7.9.0-1~noble) noble; urgency=medium
+
+  * gz-physics7 7.9.0-1 release
+
+ -- Carlos Agüero <caguero@honurobotics.com>  Thu, 29 Oct 2026 13:36:37 +0000
+
 gz-physics7 (7.8.0-1~noble) noble; urgency=medium
 
   * gz-physics7 7.8.0-1 release
